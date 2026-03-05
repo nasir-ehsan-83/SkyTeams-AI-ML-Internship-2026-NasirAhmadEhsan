@@ -1,4 +1,4 @@
-from sort import insertion_sort
+from src.python_fundamental.list_operations.sort import insertion_sort
 
 def count_of_frequency(list: list[int]) -> dict[int]:
     # sort the list for better formatting

@@ -1,78 +1,120 @@
 import unittest
 
-# 		src/python_fundamental/list_operations/frequency_counter
+# Import توابع از src
 from src.python_fundamental.list_operations.frequency_counter import count_of_frequency
-
-# 		src/python_fundamental/list_operations/min_max
 from src.python_fundamental.list_operations.min_max import max_value, min_value
-
-# 		src/python_fundamental/list_operations/reverse_list
 from src.python_fundamental.list_operations.reverse_list import reverse
-
-#		src/python_fundamental/list_operations/sort
 from src.python_fundamental.list_operations.sort import insertion_sort, merge_sort
 
+class TestListOperations(unittest.TestCase):
 
+    def setUp(self):
+        
+        self.normal_list = [1, 3, 5, 6, 3, 5, 2, 6, 6]
+        self.empty_list = []
+        self.single_element_list = [42]
+        self.unsorted_list = [5, 3, 7, 9, 13, 38, 2, 78, 51, 0, 1]
+        self.duplicate_list = [5, 3, 2, 7, 3, 23, 11, 8, 34, 52, 1]
 
-class TestListOperation(unittest.TestCase):
+    # ------------------ Frequency Counter ------------------ #
+    
 	# test count_of_frequency() in normal case
-	def test_count_of_frequency_normal(self):
-		self.assertEqual(count_of_frequency([1, 3, 5, 6, 3, 5, 2, 6, 6]), {1:1, 2:1, 3:2, 5:2, 6:3})
-	
+    def test_count_of_frequency_normal(self):
+        expected = {1:1, 2:1, 3:2, 5:2, 6:3}
+        self.assertEqual(count_of_frequency(self.normal_list), expected)
+
 	# test count_of_frequency() in empty case
-	def test_count_of_frequency_empty(self):
-		self.assertEqual(count_of_frequency([]), {})
+    def test_count_of_frequency_empty(self):
+        self.assertEqual(count_of_frequency(self.empty_list), {})
 
-	# test min() in normal cases
-	def test_min_normal(self):
-		self.assertEqual(min_value([4, 56, 34, 11, 28, 12, 67, 34]), 4)
-		self.assertEqual(min_value([4]), 4)
+	# test count_of_frequency() in single case
+    def test_count_of_frequency_single(self):
+        self.assertEqual(count_of_frequency(self.single_element_list), {42: 1})
 
-	# test min() in empty case
-	def test_min_empty(self):
-		self.assertEqual(min_value([]), None)
 
-	# test max() in normal case
-	def test_max_normal(self):
-		self.assertEqual(max_value([4, 56, 34, 11, 28, 12, 67, 34]), 67)
-		self.assertEqual(max_value([5]), 5)
-	
-	# test max() in empty case
-	def test_max_empty(self):
-		self.assertEqual(max_value([]), None)
+    # ------------------ Min & Max ------------------ #
+    
+	# test min_value() in normal case
+    def test_min_normal(self):
+        self.assertEqual(min_value(self.normal_list), 1)
 
+	# test min_value() in empty case
+    def test_min_empty(self):
+        self.assertIsNone(min_value(self.empty_list))
+
+	# test min_value in single case
+    def test_min_single(self):
+        self.assertEqual(min_value(self.single_element_list), 42)
+
+	# test max_value() in normal case
+    def test_max_normal(self):
+        self.assertEqual(max_value(self.normal_list), 6)
+
+	# test max_value() in empty case
+    def test_max_empty(self):
+        self.assertIsNone(max_value(self.empty_list))
+
+	# test max_value() in single case
+    def test_max_single(self):
+        self.assertEqual(max_value(self.single_element_list), 42)
+
+
+    # ------------------ Reverse ------------------ #
+    
 	# test reverse() in normal case
-	def test_reverse_normal(self):
-		self.assertEqual(reverse([3, 5, 34, 67, 45, 23, 6, 34]), [34, 6, 23, 45, 67, 34, 5, 3])
-		self.assertEqual(reverse([5]), [5])
+    def test_reverse_normal(self):
+        self.assertEqual(reverse(self.normal_list), [6, 6, 2, 5, 3, 6, 5, 3, 1])
 
 	# test reverse() in empty case
-	def test_reverse_empty(self):
-		self.assertEqual(reverse([]), [])
+    def test_reverse_empty(self):
+        self.assertEqual(reverse(self.empty_list), [])
 
+	# test reverse() in single case
+    def test_reverse_single(self):
+        self.assertEqual(reverse(self.single_element_list), [42])
+
+
+    # ------------------ Insertion Sort ------------------ #
+    
 	# test insertion_sort() in normal case
-	def test_insertion_sort_normal(self):
-		arr: list[int] = [5, 3, 7, 9, 13, 38, 2, 78, 51, 0, 1]
-		insertion_sort(arr)
-		self.assertEqual(arr, [0, 1, 2, 3, 5, 7, 9, 13, 38, 51, 78]) 
+    def test_insertion_sort_normal(self):
+        arr = self.unsorted_list.copy()
+        insertion_sort(arr)
+        self.assertEqual(arr, sorted(self.unsorted_list))
 
-	# test insertoin_sort() in empty case
-	def test_insertion_sort_empty(self):
-		arr: list[int] = []
-		insertion_sort(arr)
-		self.assertEqual(arr, [])
+	# test insertion_sort() in empty case
+    def test_insertion_sort_empty(self):
+        arr = self.empty_list.copy()
+        insertion_sort(arr)
+        self.assertEqual(arr, [])
 
+	# test insertion_sort() in single case
+    def test_insertion_sort_single(self):
+        arr = self.single_element_list.copy()
+        insertion_sort(arr)
+        self.assertEqual(arr, [42])
+
+
+    # ------------------ Merge Sort ------------------ #
+    
 	# test merge_sort() in normal case
-	def test_merge_sort_normal(self):
-		arr: list[int] = [5, 3, 2, 7, 3, 23, 11, 8, 34, 52, 1]
-		merge_sort(arr)
-		self.assertEqual(arr, [1, 2, 3, 3, 5, 7, 8, 11, 23, 34, 52])
+    def test_merge_sort_normal(self):
+        arr = self.duplicate_list.copy()
+        merge_sort(arr)
+        self.assertEqual(arr, sorted(self.duplicate_list))
 
-	# test merger_sort() in empty case
-	def test_merge_sort_empty(self):
-		arr: list[int] = []
-		merge_sort(arr)
-		self.assertEqual(arr, [])
+	# test merge_sort() in empty case
+    def test_merge_sort_empty(self):
+        arr = self.empty_list.copy()
+        merge_sort(arr)
+        self.assertEqual(arr, [])
+
+	# test merge_sort() in single case
+    def test_merge_sort_single(self):
+        arr = self.single_element_list.copy()
+        merge_sort(arr)
+        self.assertEqual(arr, [42])
+
 
 if __name__ == "__main__":
-	unittest.main() 
+    unittest.main()
