@@ -1,6 +1,6 @@
 import unittest
 
-# Import all functions from src/python_fundamental/
+# Import all functions from src/python_fundamental/list_operations
 from src.python_fundamental.list_operations.frequency_counter import count_of_frequency
 from src.python_fundamental.list_operations.min_max import max_value, min_value
 from src.python_fundamental.list_operations.reverse_list import reverse

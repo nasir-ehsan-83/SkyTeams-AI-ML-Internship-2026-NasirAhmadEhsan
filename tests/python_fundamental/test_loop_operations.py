@@ -1,14 +1,15 @@
 import unittest
+# Import all functions from src/python_fundamental/class_operatoins
+from src.python_fundamental.loop_operations import factor_number
+from src.python_fundamental.loop_operations import factorial
+from src.python_fundamental.loop_operations import fibonacci
+from src.python_fundamental.loop_operations import gcd_lcm
+from src.python_fundamental.loop_operations import prime_number
+from src.python_fundamental.loop_operations import sum_numbers
 
-from reverse import reverse_list
-from sort import insertion_sort
-
-class TestReverse(unittest.TestCase):
+class TestLoopOperations(unittest.TestCase):
     def test_reverse_list(self):
-        list = [4, 7, 3, 8, 2, 1, 23, 67, 0, 15, 6]
-        # sorting list before reversing
-        insertion_sort(list)
-        self.assertEqual(reverse_list(list), [67, 23, 15, 8, 7, 6, 4, 3, 2, 1, 0])
+        pass
 
 if __name__ == "__main__":
     unittest.main()
