@@ -1,5 +1,10 @@
 # compute all prime factor of a number
-def factors_of_number(number: int) -> list[int]:
+def factors_of_number(number: int):
+    if number != 0:
+        __factors_of_number(number)
+    None
+
+def __factors_of_number(number: int) -> list[int]:
     # add 1 as first factor
     factors = [1]
     # store number in tem_number to performe some operation on it
