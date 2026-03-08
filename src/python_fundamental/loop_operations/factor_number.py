@@ -2,7 +2,7 @@
 def factors_of_number(number: int):
     if number != 0:
         __factors_of_number(number)
-    None
+    return None
 
 def __factors_of_number(number: int) -> list[int]:
     # add 1 as first factor
