@@ -20,7 +20,7 @@ def factors_of_number(number: int) -> list[int]:
             factors.append(5)
         else:
             break
-    if temp_number != 1:
+    if -1 != temp_number != 1:
         factors.append(temp_number)
     factors.append(number)
     return factors
