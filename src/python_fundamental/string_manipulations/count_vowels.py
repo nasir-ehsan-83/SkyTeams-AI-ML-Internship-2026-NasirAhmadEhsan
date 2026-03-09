@@ -1,5 +1,5 @@
 def count_of_vowel(text: str):
-    vowels = ['a', 'e', 'i', 'o', 'u']
+    vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
     count = 0
 
     for i in text:
