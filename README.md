@@ -27,9 +27,10 @@ SkyTeams-AI-ML-Internship-2026-NasirAhmadEhsan
 │   │   ├── error_handling_operations/  # e.g., divide.py, log_error.py, open_file.py
 │   │   ├── file_operations/            # e.g., line_counter.py, unique_words.py, word_counter.py
 │   │   │   └── io_file_handler/        # e.g., reader.py, writer.py
-│   │   │ 
+│   │   ├── json_operations/            # e.g., load_json.py, write_json.py, update_json.py
 │   │   ├── list_operations/            # e.g., frequency_counter.py, min_max.py, reverse_list.py, sort.py
 │   │   ├── loop_operations/            # e.g., factorial.py fibonacci.py, gcd_lcm.py, prime_number.py
+│   │   ├── os_operations/              # e.g., create_dir.py, delete_file.py, list_files.py
 │   │   ├── string_manipulations/       # e.g., check_isbn10.py, count_vowels.py, is_palindrome.py
 │   │   └── __init__.py
 │   │
