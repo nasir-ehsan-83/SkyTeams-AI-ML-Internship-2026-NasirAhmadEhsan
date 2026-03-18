@@ -57,16 +57,16 @@ SkyTeams-AI-ML-Internship-2026-NasirAhmadEhsan
 - **Languages:** Python 3.x
 - **Libraries:** Numpy, Pandas
 - **Tools:** Git, Jupyter Notebooks, UnitTest
-- **OS"** Linux (Fedora) - Optimized for development
+- **OS** Linux (Fedora) - Optimized for development
 
 ---
 
 ## 🎯 Internship Goals 
 
-- **Master Python Fundamentals:** Writing modular, reusable scripts.
-- **Data Science Foundations:* Advanced NumPy and Pandas operations.
-- **ML Modeling:** Building and deploying Machine Learning algorithms.
-- **Clean Code:** Implementing the "DRY" principle and professional docstrings.
+[x]- **Master Python Fundamentals:** Writing modular, reusable scripts.
+[ ]- **Data Science Foundations:* Advanced NumPy and Pandas operations.
+[ ]- **ML Modeling:** Building and deploying Machine Learning algorithms.
+[ ]- **Clean Code:** Implementing the "DRY" principle and professional docstrings.
 
 ---
 
@@ -75,11 +75,11 @@ SkyTeams-AI-ML-Internship-2026-NasirAhmadEhsan
 To explore the code or run tests locally:
 1. **Clone the repo:** git clone https://github.com
 2. **Install Dependencies:** pip install -r requirements.txt
-3. **Run Tests:** python unittest tests/
+3. **Run Tests:** python3 -m unittest discover tests/
 
 ---
 
 ## 👤 Author
 
-Nasir Ahmad Ehsan
+**Nasir Ahmad Ehsan**
 Passionate about Backend Development, OS Design, and Artificial Intelligence.
