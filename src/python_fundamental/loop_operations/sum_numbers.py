@@ -4,7 +4,7 @@ from typing import Optional
 def sum_of_natural_number(number: int) -> Optional[int]:
     if number > 0:
         sum = 0
-        for i in range(number):
+        for i in range(number + 1):
             sum += i
 
         return sum
@@ -13,7 +13,7 @@ def sum_of_natural_number(number: int) -> Optional[int]:
 
 # sum of all odd numbers from 0 to n
 def sum_of_odd_number(number: int) -> Optional[int]:
-    if number >= 0:
+    if number > 0:
         sum_of_odd = 0
 
         for i in range(number):
@@ -26,10 +26,10 @@ def sum_of_odd_number(number: int) -> Optional[int]:
 
 # sum of all even numbers from 0 to n
 def sum_of_even_number(number: int) -> Optional[int]:
-    if number >= 0:
+    if number > 0:
         sum_of_even = 0
 
-        for i in range(number):
+        for i in range(number + 1):
             if i % 2 == 0:
                 sum_of_even += i
 

@@ -1,6 +1,6 @@
 from typing import List
 
-from reverse_string import reverse
+from src.python_fundamental.string_manipulations.reverse_string import reverse
 
 def is_palindrome(text: str) -> bool:
     if text.__contains__(" "):

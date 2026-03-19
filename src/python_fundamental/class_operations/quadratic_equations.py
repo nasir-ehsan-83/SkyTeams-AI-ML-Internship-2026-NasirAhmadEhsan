@@ -1,57 +1,48 @@
-import math
+import cmath # Handles both real and complex numbers
 
-# quadratic equeation form ax2 + bx + c = 0
 class QuadraticEquations:
 
-    # __a, __b, and __c represent three coefficients.
-    __a: float
-    __b: float
-    __c: float
-    
     def __init__(self, a: float, b: float, c: float) -> None:
-        self.__a = a
-        self.__b = b
-        self.__c = c
+        self.__a: float = float(a)
+        self.__b: float = float(b)
+        self.__c: float = float(c)
+        
+        self.__root1: float
+        self.__root2: float
 
-    # get_a() return coefficient of x2
-    def get_a(self) -> float:
-        return self.__a
+        self.caluculate_roots()
+
     
-    #get_b() return coefficient of x
-    def get_b(self) -> float:
-        return self.__b
+    def get_a(self): return self.__a
     
-    # get_c() return constant c
-    def get_c(self) -> float:
-        return self.__c
+    def get_b(self): return self.__b
     
-    # get_discriminant() return discriminant(b2 - 4*a*c) of equation
+    def get_c(self): return self.__c
+
+    def get_root1(self):
+        return self.__root1
+    
+    def get_root2(self):
+        return self.__root2
+    
     def get_discriminant(self) -> float:
-        return math.pow(self.__b, 2) - (4 * self.__a * self.__c)
+        return (self.__b ** 2) - (4 * self.__a * self.__c)
     
-    # get_root1() return the first root of equation
-    def get_root1(self) -> float:
+    def caluculate_roots(self) -> tuple:
+        """Returns both roots as a tuple. Handles linear and complex cases."""
+        # Case 1: Not a quadratic equation (a is 0)
+        if self.__a == 0:
+            if self.__b == 0:
+                # No solution if both a and b are 0
+                self.__root1 = None
+                self.__root2 = None 
+            
+            self.__root1 = -self.__c / self.__b
+            self.__root2 = None
         
-        # if the discriminant of equation is 0 or graeter there is first root
-        if self.get_discriminant() >= 0:
-            return (self.__b - math.sqrt(self.get_discriminant())) / (2 * self.__a)
+        # Case 2: Standard quadratic formula
+        d = self.get_discriminant()
         
-        # if the discriminant of equation is less than 0 there is not any root
-        else:
-            return 0
-
-    # get_root2() return second root of equation
-    def get_root2(self) -> float:
-        
-        # if the discriminant of equation is graeter than 0 there is second root
-        if self.get_discriminant() > 0:
-            return -((- self.__b - math.sqrt(self.get_discriminant())) / (2 * self.__a))
-        
-        # if the discriminant of equation is 0 or less there is not any second root
-        else:
-            return 0
-        
-equa = QuadraticEquations(1, 5, 6)
-print(equa.get_discriminant())
-print(equa.get_root1())
-print(equa.get_root2())
+        # We use cmath.sqrt so it works even if d is negative
+        self.__root1 = (-self.__b + cmath.sqrt(d)) / (2 * self.__a)
+        self.__root2 = (-self.__b - cmath.sqrt(d)) / (2 * self.__a)

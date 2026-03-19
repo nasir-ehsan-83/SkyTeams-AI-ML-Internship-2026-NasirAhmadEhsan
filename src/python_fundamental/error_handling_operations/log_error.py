@@ -1,6 +1,6 @@
 import logging
 
-logging.basicConfig(filename = 'error.log', level = logging.Error)
+logging.basicConfig(filename = 'error.log', level = int(logging.ERROR))
 
 def logging_error(func, *args, **kwargs):
     try:
