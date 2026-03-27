@@ -11,7 +11,5 @@ def check_isbn_10(number: str) -> str:
 		
 	if isbn_10_digit == 10:
 		isbn_10_digit = 'X'
-	
-	print(number+str(isbn_10_digit))
 
 	return number + str(isbn_10_digit)
