@@ -41,8 +41,8 @@ class TestJsonOperations(unittest.TestCase):
     def test_validate_json(self):
         data = {'a' : 1, 'b' : 2}
 
-        self.assertTrue(data, ['a', 'b'])
-        self.assertFalse(data, ['a', 'b', 'c'])
+        self.assertTrue(validate_keys(data, ['a', 'b']))
+        self.assertFalse(validate_keys(data, ['a', 'b', 'c']))
 
 if __name__ == "__main__":
     unittest.main()

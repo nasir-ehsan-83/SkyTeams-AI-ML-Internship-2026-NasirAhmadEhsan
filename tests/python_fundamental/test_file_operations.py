@@ -30,13 +30,13 @@ class TestFileOperations(unittest.TestCase):
     # test character_count()
     def test_character_count(self):
         file = self.create_test_file("AI & ML is great!")
-        self.assertEqual(character_count(file), 13)
+        self.assertEqual(character_count(file), 17)
         file.close()
 
     # test character_count_without_spaces()
     def test_character_count_without_spaces(self):
         file = self.create_test_file("AI & ML is great!")
-        self.assertEqual(character_count_without_spaces(file), 17)
+        self.assertEqual(character_count_without_spaces(file), 13)
         file.close()
 
     # test unique_words()

@@ -17,14 +17,14 @@ class TestLoopOperations(unittest.TestCase):
 	# test fact_loop()
 	def test_factorial_by_loop(self):
 		self.assertEqual(fact_loop(5), 120)
-		self.assertEqual(fact_loop(0), 0)
+		self.assertEqual(fact_loop(0), 1)
 		self.assertIsNone(fact_loop(-2))
 	
 	# test fact_recursion()
 	def test_factorial_by_recursion(self):
 		self.assertEqual(fact_recursion(5), 120)
-		self.assertEqual(fact_recursion(0), 0)
-		self.asserIsNone(fact_recursion(-2))
+		self.assertEqual(fact_recursion(0), 1)
+		self.assertIsNone(fact_recursion(-2))
 	
 	# test fibonacci()
 	def test_fibonacci(self):
@@ -46,14 +46,14 @@ class TestLoopOperations(unittest.TestCase):
 	
 	# test is_prime()
 	def test_is_prime(self):
-		self.assertIsTrue(is_prime(7))
-		self.assertIsFalse(is_prime(8))
+		self.assertTrue(is_prime(7))
+		self.assertFalse(is_prime(8))
 		self.assertIsNone(is_prime(0))
 	
 	# test sum_of_natural_number()
 	def test_sum_of_natural_number(self):
 		self.assertEqual(sum_of_natural_number(5), 15)
-		self.assertEqual(sum_of_natural_number(0), 0)
+		self.assertIsNone(sum_of_natural_number(0))
 		self.assertIsNone(sum_of_natural_number(-4))
 	
 	# test sum_of_odd_number()
@@ -65,7 +65,7 @@ class TestLoopOperations(unittest.TestCase):
 	# test sum_of_even_number()
 	def test_sum_of_even_number(self):
 		self.assertEqual(sum_of_even_number(10), 30)
-		self.assertEqual(sum_of_even_number(0), 0)
+		self.assertIsNone(sum_of_even_number(0))
 		self.assertIsNone(sum_of_even_number(-7))
 		
         

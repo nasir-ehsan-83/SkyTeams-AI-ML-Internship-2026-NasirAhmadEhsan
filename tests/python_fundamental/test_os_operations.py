@@ -18,7 +18,7 @@ class TestOSOerations(unittest.TestCase):
 
     # test delete_file()
     def test_delete_file(self):
-        with tempfile.TemporaryFile() as temp_file:
+        with tempfile.NamedTemporaryFile() as temp_file:
             path = temp_file.name
             delete_file(path)
             self.assertFalse(os.path.exists(path))
@@ -31,9 +31,9 @@ class TestOSOerations(unittest.TestCase):
 
     # test rename_file()
     def test_rename_file(self):
-        with tempfile.TemporaryFile(delete = False) as temp_file:
+        with tempfile.NamedTemporaryFile() as temp_file:
             old_name = temp_file.name
-            new_name = old_name + "_new"
+            new_name = str(old_name) + "_new"
             rename_file(old_name, new_name)
             self.assertTrue(os.path.exists(new_name))
             os.remove(new_name)

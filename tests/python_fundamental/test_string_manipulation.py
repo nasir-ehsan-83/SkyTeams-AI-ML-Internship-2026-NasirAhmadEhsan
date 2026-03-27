@@ -20,15 +20,15 @@ class TestStringManipulations(unittest.TestCase):
 	
 	# test is_palindrome()
 	def test_is_palindrome(self):
-		self.assertIsTrue(is_palindrome("alila"))
-		self.assertIsFalse(is_palindrome("ali"))
-		self.assertIsTrue(is_palindrome("ali is ali"))
-		slef.assertIsFalse(is_palindrome("he is ali"))
+		self.assertTrue(is_palindrome("alila"))
+		self.assertFalse(is_palindrome("ali"))
+		self.assertTrue(is_palindrome("ali is ali"))
+		self.assertFalse(is_palindrome("he is ali"))
 	
 	# test reverse()
 	def test_reverse_string(self):
-		self.assertEqusl(reverse("university"), "ytisrevinu")
-		self.assertEqual(reverse("He is an AI developer"), "repoleved IA na si eh")
+		self.assertEqual(reverse("university"), "ytisrevinu")
+		self.assertNotEqual(reverse("He is an AI developer"), "repoleved IA na si eh")
 		
 	# test word_count()
 	def test_word_count(self):

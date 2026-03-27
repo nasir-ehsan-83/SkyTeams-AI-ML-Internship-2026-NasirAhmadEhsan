@@ -21,18 +21,18 @@ class TestQuadraticEquations(unittest.TestCase):
 
     # test first root
     def test_root1(self):
-        self.assertAlmostEqual(self.eq.get_root1(), 1)
+        self.assertAlmostEqual(self.eq.get_root1(), -2)
 
     # test second root
     def test_root2(self):
-        self.assertAlmostEqual(self.eq.get_root2(), -6)
+        self.assertAlmostEqual(self.eq.get_root2(), -3)
 
     # edge case: discriminant < 0
     def test_no_real_roots(self):
         eq = QuadraticEquations(1, 2, 5)
 
-        self.assertEqual(eq.get_root1(), 0)
-        self.assertEqual(eq.get_root2(), 0)
+        self.assertEqual(eq.get_root1(), (-1 +2j))
+        self.assertEqual(eq.get_root2(), (-1 -2j))
 
 
 if __name__ == "__main__":

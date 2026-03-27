@@ -13,7 +13,7 @@ class TestDictionaryOperations(unittest.TestCase):
 	# test invert_dictionary()
 	def test_invert_dictionary(self):
 		self.assertEqual(invert_dictionary({"#1": "ali", "#2": "ahmad"}), {"ali": "#1", "ahmad": "#2"})
-		self.assertEqual(invert_dictionary({}, {}))
+		self.assertEqual(invert_dictionary({}), {})
 		
 	# test merge_dictionary()
 	def test_merge_dictionary(self):
