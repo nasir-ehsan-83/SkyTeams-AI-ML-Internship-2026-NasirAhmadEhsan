@@ -1,4 +1,4 @@
-# 🚀 SkyTeams AI & ML Internship 2026
+# 🚀 SkyTeams AI & ML Internship
 
 Dedicated to building intelligent systems and mastering the fundamentals of Machine Learning.
 
